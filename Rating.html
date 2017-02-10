@@ -2,83 +2,96 @@
 <html lang="en">
 <html>
 <head>
-  <title>
-    Pure Css - rating star
-  </title>
-  <style type="text/css">
-    .container {
-      position: relative;
-      z-index: 0;
-    }
+    <title>
+        Pure Css - rating star
+    </title>
+    <style type="text/css">
+        .container {
+            position: relative;
+            z-index: 0;
+            height: 30px;
+            padding: 0;
+            margin: 0;
+            width: 220px;
+        }
 
-    .container polygon {
-      stroke: pink;
-      fill: pink;
-    }
+        .container polygon {
+            stroke: pink;
+            fill: pink;
+        }
 
-    input {
-      width: 40px;
-      height: 40px;
-      margin: 0;
-      padding: 0;
-      opacity: 0;
-    }
+        .container:hover .star polygon {
+            fill: pink;
+            stroke: pink;
+        }
 
-    input:checked ~ .star polygon {
-      fill: #ccc;
-      stroke: #ccc;
-    }
+        input {
+            width: 40px;
+            height: 40px;
+            margin: 0;
+            padding: 0;
+            opacity: 0;
+        }
 
-    input:checked + .star polygon {
-      fill: pink;
-      stroke: pink;
-    }
+        input:first-child {
+            display: none;
+        }
 
-    .star {
-      position: absolute;
-      display: inline-block;
-      margin-left: -40px;
-      width: 40px;
-      height: 40px;
-      z-index: -1;
-    }
+        input:checked ~ .star polygon, .container input:hover ~ .star polygon  {
+            fill: #ccc;
+            stroke: #ccc;
+        }
 
-    .star polygon {
-      stroke: pink;
-      fill: pink;
-    }
+        input:checked + .star polygon, .container input:hover + .star polygon {
+            fill: pink;
+            stroke: pink;
+        }
 
-  </style>
+        .star {
+            position: absolute;
+            display: inline-block;
+            margin-left: -40px;
+            width: 40px;
+            height: 40px;
+            z-index: -1;
+        }
+
+        .star polygon {
+            stroke: pink;
+            fill: pink;
+        }
+
+    </style>
 </head>
 
 <body>
 <div class="container">
-  <input type='radio' name='star1' checked="checked">
-  <input type='radio' name='star1'>
-  <svg viewBox="200 50 300 300" width='1em' height='1em' class="star">
-    <polygon strokeWidth='10'
-             points="350,75 400,150 469,161 408,226 423,301 350,261 277,301 292,226 231,161 310,150"/>
-  </svg>
-  <input type='radio' name='star1'>
-  <svg viewBox="200 50 300 300" width='1em' height='1em' class="star">
-    <polygon strokeWidth='10'
-             points="350,75 400,150 469,161 408,226 423,301 350,261 277,301 292,226 231,161 310,150"/>
-  </svg>
-  <input type='radio' name='star1'>
-  <svg viewBox="200 50 300 300" width='1em' height='1em' class="star">
-    <polygon strokeWidth='10'
-             points="350,75 400,150 469,161 408,226 423,301 350,261 277,301 292,226 231,161 310,150"/>
-  </svg>
-  <input type='radio' name='star1'>
-  <svg viewBox="200 50 300 300" width='1em' height='1em' class="star">
-    <polygon strokeWidth='10'
-             points="350,75 400,150 469,161 408,226 423,301 350,261 277,301 292,226 231,161 310,150"/>
-  </svg>
-  <input type='radio' name='star1'>
-  <svg viewBox="200 50 300 300" width='1em' height='1em' class="star">
-    <polygon strokeWidth='10'
-             points="350,75 400,150 469,161 408,226 423,301 350,261 277,301 292,226 231,161 310,150"/>
-  </svg>
+    <input type='radio' name='star1' checked="checked">
+    <input type='radio' name='star1'>
+    <svg viewBox="200 50 300 300" width='1em' height='1em' class="star">
+        <polygon strokeWidth='10'
+                 points="350,75 400,150 469,161 408,226 423,301 350,261 277,301 292,226 231,161 310,150"/>
+    </svg>
+    <input type='radio' name='star1'>
+    <svg viewBox="200 50 300 300" width='1em' height='1em' class="star">
+        <polygon strokeWidth='10'
+                 points="350,75 400,150 469,161 408,226 423,301 350,261 277,301 292,226 231,161 310,150"/>
+    </svg>
+    <input type='radio' name='star1'>
+    <svg viewBox="200 50 300 300" width='1em' height='1em' class="star">
+        <polygon strokeWidth='10'
+                 points="350,75 400,150 469,161 408,226 423,301 350,261 277,301 292,226 231,161 310,150"/>
+    </svg>
+    <input type='radio' name='star1'>
+    <svg viewBox="200 50 300 300" width='1em' height='1em' class="star">
+        <polygon strokeWidth='10'
+                 points="350,75 400,150 469,161 408,226 423,301 350,261 277,301 292,226 231,161 310,150"/>
+    </svg>
+    <input type='radio' name='star1'>
+    <svg viewBox="200 50 300 300" width='1em' height='1em' class="star">
+        <polygon strokeWidth='10'
+                 points="350,75 400,150 469,161 408,226 423,301 350,261 277,301 292,226 231,161 310,150"/>
+    </svg>
 </div>
 </body>
 </html>
