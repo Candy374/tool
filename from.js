@@ -108,10 +108,13 @@ function updateInput(form) {
         if ((dateInput.type === 'date' || dateInput.getAttribute('data-type') === 'date')
                 && dateInput.placeholder) {
             dateInput.type = 'text';
+		console.log('setting', this);
             dateInput.onblur = function () {
+		    console.log('onblur', this)
                 this.type = 'text';
             };
             dateInput.onfocus = function () {
+		    console.log('onfocus', this)
                 this.type = 'date';
             };
             dateInput['data-type'] = 'date';
