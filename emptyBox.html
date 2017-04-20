@@ -1,78 +1,97 @@
 <!DOCTYPE html >
 <html content="text/html; charset=GB18030">
 <head>
-	<title>¿ÕÐÄ¿ò</title>
+    <title>ç©ºå¿ƒæ¡†</title>
 </head>
 <body>
-	<!-- Learn about this code on MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path -->
-	<img class='image sample' src="https://mdn.mozillademos.org/files/12668/MDN.svg"
-		    alt="MDN logo"/>
 
-	<div id='box'></div>
+    <section>
+        Horizontal: <input id='width' type=number value=20 min=0 max=25>%
+        Vertical: <input id='height' type=number value=20 min=0 max=25>%
+        Border: <input id='border' type=number value=1 min=1 max=5>%
+    </section>
 
-	<div class='pure sample'></div>
+    <section>
+        <!-- Learn about this code on MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path -->
 
-	<div class='setting'>
-		Horizontal: <input id='width' type=range value=20 min=0 max=25>
-		Vertical: <input id='height' type=range value=10 min=0 max=25>
-		Border: <input id='border' type=number value=1 min=1 max=5>
-	</div>
+        <div class='pure sample'></div>
+
+        <img class='image sample' src="https://mdn.mozillademos.org/files/12668/MDN.svg"
+             alt="MDN logo"/>
+
+        <div id="clip-path-sample"></div>
+    </section>
+    <section>
+        <div id='box'></div>
+
+        <div id="clip-path-box"></div>
+    </section>
 </body>
 </html>
 <style type="text/css">
-.sample {
-	width: 230px;
-	height: 200px;
-	margin-bottom: 20px;
-	background: pink;
-	display: inline-block;
-}
+    body {
+        font-family: monospace, YaHei;
+        margin: 20px;
+    }
 
-.image {
-	clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 20% 10%, 20% 90%, 80% 90%, 80% 10%,  20% 10%, 23% 13%, 23% 87%, 77% 87%, 77% 13%, 23% 13%, 20% 10%);
-}
+    .sample {
+        width: 230px;
+        height: 200px;
+        margin-bottom: 20px;
+        background: pink;
+        display: inline-block;
+    }
 
-#box {
-  	clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 2%, 2% 2%, 2% 98%, 98% 98%, 98% 2%, 0% 2%, 0% 0%);
-  	width: 230px;
-	height: 200px;
-	margin-bottom: 20px;
-	background: pink;
-	display: inline-block;
-}
+    .image {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 16% 10%, 16% 90%, 84% 90%, 84% 10%, 16% 10%, 17% 11%, 17% 89%, 83% 89%, 83% 11%, 17% 11%, 16% 10%);
+    }
 
-.pure {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 20% 10%, 20% 90%, 80% 90%, 80% 10%,  20% 10%, 23% 13%, 23% 87%, 77% 87%, 77% 13%, 23% 13%, 20% 10%);
-  background: pink;
-  width: 600px;
-  height: 400px;
-}
+    #box {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 2%, 2% 2%, 2% 98%, 98% 98%, 98% 2%, 0% 2%, 0% 0%);
+        width: 230px;
+        height: 200px;
+        margin-bottom: 20px;
+        background: pink;
+    }
+
+    .pure {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 16% 10%, 16% 90%, 84% 90%, 84% 10%, 16% 10%, 17% 11%, 17% 89%, 83% 89%, 83% 11%, 17% 11%, 16% 10%);
+        background: pink;
+    }
+
+    section {
+        margin: 20px 0px;
+    }
 
 </style>
 
 
 <script type="text/javascript">
-	var widthInput = document.getElementById('width');
-	var heightInput = document.getElementById('height');
-	var borderInput = document.getElementById('border');
+    var widthInput = document.getElementById('width');
+    var heightInput = document.getElementById('height');
+    var borderInput = document.getElementById('border');
+    var sampleText = document.getElementById('clip-path-sample');
+    var boxText = document.getElementById('clip-path-box');
 
-	var sample = document.getElementsByClassName('sample');
-	var box = document.getElementById('box');
+    var sample = document.getElementsByClassName('sample');
+    var box = document.getElementById('box');
 
-	var onchange = function(event) {
-		var width = parseInt(widthInput.value);
-		var height = parseInt(heightInput.value);
-		var border = parseInt(borderInput.value);
+    var onchange = function (event) {
+        var width = parseInt(widthInput.value);
+        var height = parseInt(heightInput.value);
+        var border = parseInt(borderInput.value);
 
-		var path = `polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, ${width}% ${height}%, ${width}% ${100 - height}%, ${100 - width}% ${100 - height}%, ${100 - width}% ${height}%,  ${width}% ${height}%, ${width + border}% ${height + border}%, ${width + border}% ${100 - height - border}%, ${100 - width - border}% ${100 - height - border}%, ${100 - width - border}% ${height + border}%, ${width + border}% ${height + border}%, ${width}% ${height}%);`;
+        var path = `polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, ${width}% ${height}%, ${width}% ${100 - height}%, ${100 - width}% ${100 - height}%, ${100 - width}% ${height}%,  ${width}% ${height}%, ${width + border}% ${height + border}%, ${width + border}% ${100 - height - border}%, ${100 - width - border}% ${100 - height - border}%, ${100 - width - border}% ${height + border}%, ${width + border}% ${height + border}%, ${width}% ${height}%);`;
+        sampleText.innerHTML = 'clip-path: ' + path;
+        for (var i = 0; i < sample.length; i++) {
+            sample[i].setAttribute('style', 'clip-path: ' + path);
+        }
+        var boxPath = `polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% ${border}%, ${border}% ${border}%, ${border}% ${100 - border}%, ${100 - border}% ${100 - border}%, ${100 - border}% ${border}%, 0% ${border}%, 0% 0%)`;
+        boxText.innerHTML = 'clip-path: ' + boxPath + ';';
+        box.setAttribute('style', 'clip-path: ' + boxPath);
+    };
 
-		for(var i = 0; i < sample.length; i++) {
-			sample[i].setAttribute("style", "clip-path: " + path);
-		}
-		box.setAttribute('style', 'clip-path: ' + `polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% ${border}%, ${border}% ${border}%, ${border}% ${100 - border}%, ${100 - border}% ${100 - border}%, ${100 - border}% ${border}%, 0% ${border}%, 0% 0%)`)
-	};
-
-	widthInput.onchange = onchange;
-	heightInput.onchange = onchange;
-	borderInput.onclick = onchange;
+    widthInput.onclick = onchange;
+    heightInput.onclick = onchange;
+    borderInput.onclick = onchange;
 </script>
