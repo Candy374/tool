@@ -1,0 +1,44 @@
+<!DOCTYPE html >
+<html content="text/html; charset=GB18030">
+
+<head>
+    <title>date input place holder</title>
+</head>
+
+<body>
+    <input type=date placeholder='birthday' />
+</body>
+
+</html>
+<style type="text/css">
+.hide-date-edit-field::-webkit-datetime-edit-month-field,
+.hide-date-edit-field::-webkit-datetime-edit-day-field,
+.hide-date-edit-field::-webkit-datetime-edit-year-field,
+.hide-date-edit-field::-webkit-datetime-edit-text {
+    display: none;
+}
+
+input[type=date]:before {
+    content: attr(placeholder);
+}
+</style>
+<script type="text/javascript">
+function updateDateInputStyle(input) {
+    if (!input.value) {
+        input.classList.add('hide-date-edit-field');
+        input.placeholder = input.dataPlaceholder;
+    } else {
+        input.classList.remove('hide-date-edit-field');
+        input.placeholder = '';
+    }
+}
+
+var dateInput = document.getElementsByTagName('input')[0];
+
+dateInput.dataPlaceholder = dateInput.placeholder;
+
+updateDateInputStyle(dateInput);
+dateInput.onchange = function() {
+    updateDateInputStyle(this);
+}
+</script>
