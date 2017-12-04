@@ -1,0 +1,205 @@
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+</html>
+
+<div style="width: 580px;">
+    <table width="100%" data-module="da_zhuan_pan" data-name="图片">
+        <tbody>
+        <tr>
+            <td>
+                <style>
+                    .image-container_width {
+                        width:100%;
+                        margin:0 auto;
+                        overflow:hidden;
+                        position: relative;
+                    }
+                    .image-container{
+                        text-align:center;
+                    }
+                    .image-container img{
+                        max-width:100%;
+                    }
+
+                    .zhuanpan_content {
+                        position: absolute;
+                        top: 38%;
+                        left: 20%;
+                        width: 60%;
+                        bottom: 9%;
+                    }
+
+                    .item {
+                        text-align: center;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    .item .img {
+                        width: 50px;
+                        height: 60px;
+                        position: relative;
+                        display: block;
+                        padding-top: 15px;
+                        margin: 0 auto;
+                        text-align: center;
+                        /* -webkit-transform-origin: 50% 150px; */
+                        -ms-transform-origin: 50% 150px;
+                        transform-origin: 50% 170px;
+                    }
+
+                    .item img {
+                        object-fit: contain !important;
+                        max-width: 100%;
+                    }
+
+                    .item1 .img{
+                        transform: rotate(-36deg);
+                    }
+
+                    .item3 .img{
+                        transform: rotate(36deg);
+                    }
+
+                    .item4 .img{
+                        transform: rotate(72deg);
+                    }
+
+                    .item5 .img{
+                        transform: rotate(108deg);
+                    }
+
+                    .item6 .img{
+                        transform: rotate(144deg);
+                    }
+
+                    .item7 .img{
+                        transform: rotate(180deg);
+                    }
+
+                    .item8 .img{
+                        transform: rotate(216deg);
+                    }
+
+                    .item9 .img{
+                        transform: rotate(252deg);
+                    }
+
+                    .item10 .img{
+                        transform: rotate(288deg);
+                    }
+
+                    .rotate {
+                        transform: rotate(7200deg);
+                        transition: All 6s ease;
+                    }
+
+                    .rotateStop {
+                        transform: rotate(360deg);
+                        transition: All 2s ease;
+                    }
+
+                    .pointer {
+                        width: 37%;
+                        height: 37%;
+                        left: 32%;
+                        position: absolute;
+                        top: 32%;
+                        border-radius: 50%;
+                    }
+
+                    .pointer:before {
+                        content: "";
+                        border: 10px solid #feab04;
+                        border-left-color: transparent;
+                        border-right-color: transparent;
+                        /* background: pink; */
+                        position: absolute;
+                        width: 1px;
+                        border-bottom-width: 25px;
+                        border-top-color: transparent;
+                        top: -33px;
+                        /* position: absolute; */
+                        left: 50%;
+                        margin-left: -10px;
+                    }
+                </style>
+                <div data-background-image data-background-color class="image-container_width">
+                    <div class="image-container">
+                        <img data-image src="http://static.91convert.com/template/image/zhuanpan.jpg">
+                    </div>
+                    <div class="zhuanpan_content">
+                        <div class="item item1">
+                            <div class="img">
+                                <img data-image src="http://static.91convert.com/template/image/icon_dazhuanpan01.png">
+                            </div>
+                        </div>
+                        <div class="item item2">
+                            <div class="img">
+                                <img data-image src="http://static.91convert.com/template/image/icon_dazhuanpan02.png">
+                            </div>
+                        </div>
+                        <div class="item item3">
+                            <div class="img">
+                                <img data-image src="http://static.91convert.com/template/image/icon_dazhuanpan03.png">
+                            </div>
+                        </div>
+                        <div class="item item4">
+                            <div class="img">
+                                <img data-image src="http://static.91convert.com/template/image/icon_dazhuanpan01.png">
+                            </div>
+                        </div>
+                        <div class="item item5">
+                            <div class="img">
+                                <img data-image src="http://static.91convert.com/template/image/icon_dazhuanpan02.png">
+                            </div>
+                        </div>
+                        <div class="item item6">
+                            <div class="img">
+                                <img data-image src="http://static.91convert.com/template/image/icon_dazhuanpan03.png">
+                            </div>
+                        </div>
+                        <div class="item item7">
+                            <div class="img">
+                                <img data-image src="http://static.91convert.com/template/image/icon_dazhuanpan01.png">
+                            </div>
+                        </div>
+                        <div class="item item8">
+                            <div class="img">
+                                <img data-image src="http://static.91convert.com/template/image/icon_dazhuanpan02.png">
+                            </div>
+                        </div>
+                        <div class="item item9">
+                            <div class="img">
+                                <img data-image src="http://static.91convert.com/template/image/icon_dazhuanpan03.png">
+                            </div>
+                        </div>
+                        <div class="item item10">
+                            <div class="img">
+                                <img data-image src="http://static.91convert.com/template/image/icon_dazhuanpan01.png">
+                            </div>
+                        </div>
+                        <div class="pointer">
+
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    $('.zhuanpan_content').on('click', function () {
+                        $('.pointer').addClass('rotate');
+                        setTimeout(() => {
+                            $('.pointer').css('transform', 'rotate(' + (7200 + 60) + 'deg)');
+                            $('.pointer').css('transition', 'All 5s ease-out');
+                        }, 1000 * 6 - 200);
+                    })
+                </script>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
